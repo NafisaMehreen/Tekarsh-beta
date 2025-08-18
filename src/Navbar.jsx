@@ -91,6 +91,8 @@ export const Navbar = ({ onMenuClick }) => {
       navigate('/');
     } else if (label === "About") {
       navigate('/about');
+    } else if (label === "Career") {
+      navigate('/career');
     } else {
       if (onMenuClick) onMenuClick(label.toLowerCase());
     }
@@ -211,7 +213,7 @@ export const Navbar = ({ onMenuClick }) => {
                             ? 'bg-black text-[#249d58] font-medium' 
                             : 'text-black hover:bg-neutral-400 font-medium'
                         }`}
-                        onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                        onClick={() => handleClick("Services")}
                       >
                         <span className="text-lg">{item.label}</span>
                         <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`} />
