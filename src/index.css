@@ -318,3 +318,87 @@ button:focus-visible {
     @apply bg-background text-foreground;
   }
 }
+
+/* Accessibility Enhancements */
+@layer utilities {
+  /* Screen reader only content */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .sr-only:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: inherit;
+    margin: inherit;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+
+  /* Enhanced focus indicators */
+  .focus-visible:focus-visible {
+    outline: 2px solid theme('colors.green.500');
+    outline-offset: 2px;
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    .text-gray-600 {
+      @apply text-gray-800;
+    }
+    
+    .text-gray-500 {
+      @apply text-gray-700;
+    }
+    
+    .border-gray-200 {
+      @apply border-gray-400;
+    }
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fade-in,
+    .animate-fade-in-up,
+    .animate-float,
+    .animate-rotate-slow,
+    .animate-pulse-glow,
+    .animate-marquee-slow,
+    .animate-marquee-reverse-slow,
+    .animate-circular-motion {
+      animation: none;
+    }
+    
+    .transition-all,
+    .transition-colors,
+    .transition-transform,
+    .transition-opacity {
+      transition: none;
+    }
+    
+    .hover\:scale-105:hover,
+    .focus\:scale-105:focus,
+    .hover\:-translate-y-1:hover,
+    .focus\:-translate-y-1:focus,
+    .group-hover\:translate-x-1,
+    .group-focus\:translate-x-1 {
+      transform: none;
+    }
+  }
+
+  /* Ensure minimum touch target size */
+  .min-touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}

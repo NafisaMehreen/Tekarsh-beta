@@ -7,6 +7,7 @@ import { SoftDev } from './routes/SoftDev.jsx'
 import { Qa } from './routes/Qa.jsx'
 import { Dataprocess } from './routes/Dataprocess.jsx'
 import { About } from './routes/About.jsx'
+import { ClientServices } from './routes/ClientServices.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -17,6 +18,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/quality-assurance" element={<Qa />} />
         <Route path="/data-processing" element={<Dataprocess />} />
         <Route path="/about" element={<About />} />
+        <Route path="/client-services" element={<ClientServices />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
