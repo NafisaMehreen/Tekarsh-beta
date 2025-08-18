@@ -5,7 +5,7 @@ import { Code, Shield, Users, Database, ChevronDown, Menu, X } from 'lucide-reac
 export const Navbar = ({ onMenuClick }) => {
   const navigate = useNavigate();
   const location = useLocation();
-  
+
   const [menuItems, setMenuItems] = useState([
     { label: "Home", isActive: true },
     { label: "About", isActive: false },
@@ -15,31 +15,32 @@ export const Navbar = ({ onMenuClick }) => {
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
   const mobileMenuRef = useRef(null);
 
   const serviceItems = [
-    { 
-      label: "Software Development", 
-      icon: Code, 
+    {
+      label: "Software Development",
+      icon: Code,
       color: "text-teal-500",
       route: "/software-development"
     },
-    { 
-      label: "Quality Assurance", 
-      icon: Shield, 
+    {
+      label: "Quality Assurance",
+      icon: Shield,
       color: "text-pink-500",
       route: "/quality-assurance"
     },
-    { 
-      label: "Client Services", 
-      icon: Users, 
+    {
+      label: "Client Services",
+      icon: Users,
       color: "text-purple-500",
       route: "/client-services"
     },
-    { 
-      label: "Data processing", 
-      icon: Database, 
+    {
+      label: "Data processing",
+      icon: Database,
       color: "text-blue-500",
       route: "/data-processing"
     },
@@ -50,7 +51,7 @@ export const Navbar = ({ onMenuClick }) => {
     setMenuItems((items) =>
       items.map((item) => ({
         ...item,
-        isActive: 
+        isActive:
           (item.label === "Home" && location.pathname === "/") ||
           (item.label === "About" && location.pathname === "/about") ||
           (item.label === 'Services' && (
@@ -104,12 +105,14 @@ export const Navbar = ({ onMenuClick }) => {
   const handleServiceClick = (serviceItem) => {
     navigate(serviceItem.route);
     setIsDropdownOpen(false);
+    setIsMobileDropdownOpen(false);
     setIsMobileMenuOpen(false);
   };
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
     setIsDropdownOpen(false);
+    setIsMobileDropdownOpen(false);
   };
 
   return (
@@ -129,8 +132,8 @@ export const Navbar = ({ onMenuClick }) => {
             {menuItems.map((item, index) => (
               <li key={index} className="relative" ref={item.label === "Services" ? dropdownRef : null}>
                 {item.isActive ? (
-                  <button 
-                    className="h-11 px-4 xl:px-6 rounded-[42px] bg-black hover:bg-black/90 transition flex items-center gap-1 min-h-[44px]" 
+                  <button
+                    className="h-11 px-4 xl:px-6 rounded-[42px] bg-black hover:bg-black/90 transition flex items-center gap-1 min-h-[44px]"
                     onClick={() => handleClick(item.label)}
                   >
                     <span className="font-medium text-[#249d58] text-lg xl:text-xl">
@@ -197,7 +200,7 @@ export const Navbar = ({ onMenuClick }) => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div 
+        <div
           ref={mobileMenuRef}
           className="lg:hidden absolute top-full left-0 w-full bg-neutral-300 border-t border-neutral-400 shadow-lg"
         >
@@ -208,19 +211,18 @@ export const Navbar = ({ onMenuClick }) => {
                   {item.label === "Services" ? (
                     <div>
                       <button
-                        className={`w-full flex items-center justify-between px-6 py-3 text-left transition min-h-[44px] ${
-                          item.isActive 
-                            ? 'bg-black text-[#249d58] font-medium' 
+                        className={`w-full flex items-center justify-between px-6 py-3 text-left transition min-h-[44px] ${item.isActive
+                            ? 'bg-black text-[#249d58] font-medium'
                             : 'text-black hover:bg-neutral-400 font-medium'
-                        }`}
-                        onClick={() => handleClick("Services")}
+                          }`}
+                        onClick={() => setIsMobileDropdownOpen(!isMobileDropdownOpen)}
                       >
                         <span className="text-lg">{item.label}</span>
-                        <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`} />
+                        <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isMobileDropdownOpen ? 'rotate-180' : ''}`} />
                       </button>
-                      
+
                       {/* Mobile Services Submenu */}
-                      {isDropdownOpen && (
+                      {isMobileDropdownOpen && (
                         <div className="bg-neutral-200 border-t border-neutral-400">
                           {serviceItems.map((service, serviceIndex) => {
                             const IconComponent = service.icon;
@@ -244,11 +246,10 @@ export const Navbar = ({ onMenuClick }) => {
                     </div>
                   ) : (
                     <button
-                      className={`w-full text-left px-6 py-3 transition min-h-[44px] ${
-                        item.isActive 
-                          ? 'bg-black text-[#249d58] font-medium' 
+                      className={`w-full text-left px-6 py-3 transition min-h-[44px] ${item.isActive
+                          ? 'bg-black text-[#249d58] font-medium'
                           : 'text-black hover:bg-neutral-400 font-medium'
-                      }`}
+                        }`}
                       onClick={() => handleClick(item.label)}
                     >
                       <span className="text-lg">{item.label}</span>
