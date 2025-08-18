@@ -22,12 +22,16 @@ export const Landing = () => {
   return (
     <div className="font-sans text-gray-900 scroll-smooth bg-neutral-100 min-h-screen">
 
-      <div className="relative">
-        <div className="absolute top-0 w-full z-50">
-          <Navbar onMenuClick={scrollToSection} />
-        </div>
+      {/* Navigation */}
+      <nav className="fixed top-0 w-full z-50" role="navigation" aria-label="Main navigation">
+        <Navbar onMenuClick={scrollToSection} />
+      </nav>
 
-        <HeroSection
+      {/* Main Content */}
+      <main role="main">
+        {/* Hero Section */}
+        <section aria-labelledby="hero-title" className="pt-[85px]">
+          <HeroSection
           badge="✨ Software Excellence"
           title="From Vision to Reality"
           subtitle="Transform your ideas into powerful, scalable solutions"
@@ -51,7 +55,8 @@ export const Landing = () => {
             }
           ]}
         />
-      </div>
+        </section>
+      </main>
 
       <div className='flex justify-center py-6'>
         <div className="md:px-100 text-center bg-neutral-100 border-b-2 border-green-800"></div>

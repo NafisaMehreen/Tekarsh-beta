@@ -59,7 +59,7 @@ export const ClientServices = () => {
       {/* Main Content */}
       <main id="main-content" role="main">
         {/* Hero Section */}
-        <section aria-labelledby="hero-title">
+        <section aria-labelledby="hero-title" className="mt-4 sm:mt-6">
           <HeroSection
             badge="✨ Client Services"
             title="Comprehensive Services for Your Success"
