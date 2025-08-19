@@ -8,6 +8,7 @@ import { Qa } from './routes/Qa.jsx'
 import { Dataprocess } from './routes/Dataprocess.jsx'
 import { About } from './routes/About.jsx'
 import { ClientServices } from './routes/ClientServices.jsx'
+import { Contacts } from './routes/Contacts.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -19,6 +20,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/data-processing" element={<Dataprocess />} />
         <Route path="/about" element={<About />} />
         <Route path="/client-services" element={<ClientServices />} />
+        <Route path="/contacts" element={<Contacts />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

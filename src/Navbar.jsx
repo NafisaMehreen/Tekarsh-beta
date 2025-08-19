@@ -10,6 +10,7 @@ export const Navbar = ({ onMenuClick }) => {
     { label: "Home", isActive: true },
     { label: "About", isActive: false },
     { label: "Services", isActive: false },
+    { label: "Contacts", isActive: false },
     { label: "Career", isActive: false },
   ]);
 
@@ -60,6 +61,7 @@ export const Navbar = ({ onMenuClick }) => {
             location.pathname === '/client-services' ||
             location.pathname === '/data-processing'
           )) ||
+          (item.label === "Contacts" && location.pathname === "/contacts") ||
           (item.label === "Career" && location.pathname === "/career")
       }))
     );
@@ -93,6 +95,8 @@ export const Navbar = ({ onMenuClick }) => {
       navigate('/');
     } else if (label === "About") {
       navigate('/about');
+    } else if (label === "Contacts") {
+      navigate('/contacts');
     } else if (label === "Career") {
       navigate('/career');
     } else {
