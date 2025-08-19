@@ -6,7 +6,6 @@ import { Mail, MapPin, ArrowRight } from 'lucide-react';
 
 export const Contacts = () => {
 	const contactEmail = 'contact@tekarsh.com';
-	const usaEmail = 'usa@tekarsh.com';
 	const bdEmail = 'bd@tekarsh.com';
 
 	const mailtoHref = useMemo(() => {
@@ -68,14 +67,6 @@ export const Contacts = () => {
 							<a href={`mailto:${contactEmail}`} className="text-green-700 font-medium hover:underline break-all">{contactEmail}</a>
 						</div>
 
-						<div className="p-6 rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow">
-							<div className="flex items-center gap-3 mb-1">
-								<MapPin className="w-5 h-5 text-green-700" />
-								<h3 className="text-lg font-semibold">USA</h3>
-							</div>
-							<p className="text-gray-600 mb-2">Remote, US</p>
-							<a href={`mailto:${usaEmail}`} className="text-green-700 font-medium hover:underline break-all">{usaEmail}</a>
-						</div>
 
 						<div className="p-6 rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow">
 							<div className="flex items-center gap-3 mb-1">

@@ -8,11 +8,13 @@ import { Qa } from './routes/Qa.jsx'
 import { Dataprocess } from './routes/Dataprocess.jsx'
 import { About } from './routes/About.jsx'
 import { ClientServices } from './routes/ClientServices.jsx'
+import { ScrollToTop } from './components/ScrollToTop.jsx'
 import { Contacts } from './routes/Contacts.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/software-development" element={<SoftDev />} />
