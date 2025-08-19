@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navbar } from '../Navbar.jsx';
 import { TekarshFooter } from '../components/TekarshFooter.jsx';
+import { AuroraBackground } from '../components/ui/aurora-background.jsx';
 import {
   Users, Code, Database, Shield, Target, Award, 
   TrendingUp, Globe, CheckCircle
@@ -138,26 +139,28 @@ export const About = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 md:px-16 bg-white">
-        <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-8 text-gray-900 leading-tight">
-            We are <span className="text-green-600">TEKARSH</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
-            A fully integrated software development company delivering the highest quality custom software, 
-            elite QA, and partner-centric client services.
-          </p>
-          
-          {/* Stats Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-green-600 mb-2">{stat.number}</div>
-                <div className="text-gray-600 font-medium">{stat.label}</div>
-              </div>
-            ))}
+      <section className="pt-[85px]">
+        <AuroraBackground className="py-20 sm:py-24 lg:py-32">
+          <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
+            <h1 className="text-5xl md:text-7xl font-bold mb-8 text-gray-900 leading-tight animate-fade-in-up">
+              We are <span className="text-green-600">TEKARSH</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+              A fully integrated software development company delivering the highest quality custom software, 
+              elite QA, and partner-centric client services.
+            </p>
+            
+            {/* Stats Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+              {stats.map((stat, index) => (
+                <div key={index} className="text-center">
+                  <div className="text-4xl md:text-5xl font-bold text-green-600 mb-2">{stat.number}</div>
+                  <div className="text-gray-600 font-medium">{stat.label}</div>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        </AuroraBackground>
       </section>
 
       {/* Mission Statement */}

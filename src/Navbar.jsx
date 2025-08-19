@@ -59,7 +59,8 @@ export const Navbar = ({ onMenuClick }) => {
             location.pathname === '/quality-assurance' ||
             location.pathname === '/client-services' ||
             location.pathname === '/data-processing'
-          ))
+          )) ||
+          (item.label === "Career" && location.pathname === "/career")
       }))
     );
   }, [location.pathname]);

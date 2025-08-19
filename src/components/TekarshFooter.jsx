@@ -6,7 +6,6 @@ import {
     MapPin,
     Linkedin,
     Facebook,
-    Twitter,
     ArrowRight,
     Send,
 } from 'lucide-react';
@@ -31,27 +30,27 @@ export const TekarshFooter = () => {
                 }} />
             </div>
 
-            <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-16 py-20">
+            <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-16 py-12">
                 {/* Main Footer Content */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-10">
                     
                     {/* Company Info - Takes more space */}
                     <div className="lg:col-span-5">
-                        <div className="mb-8">
+                        <div className="mb-6">
                             <img
-                                className="w-[350px] h-[105px] object-contain cursor-pointer mb-8"
+                                className="w-[350px] h-[105px] object-contain cursor-pointer mb-6"
                                 alt="Tekarsh Logo"
                                 src="/logo.png"
                                 onClick={() => navigate('/')}
                             />
-                            <p className="text-gray-300 text-lg leading-relaxed max-w-lg mb-8">
+                            <p className="text-gray-300 text-lg leading-relaxed max-w-lg mb-6">
                                 A fully integrated software development company delivering the highest quality custom software, 
                                 elite QA, and partner-centric client services.
                             </p>
                         </div>
                         
                         {/* Contact Info */}
-                        <div className="space-y-6">
+                        <div className="space-y-4">
                             <div className="flex items-center space-x-4">
                                 <div className="bg-green-600 p-3 rounded-full">
                                     <Mail className="w-5 h-5 text-white" />
@@ -80,7 +79,7 @@ export const TekarshFooter = () => {
 
                     {/* Services */}
                     <div className="lg:col-span-3">
-                        <h3 className="text-2xl font-bold text-white mb-8 relative">
+                        <h3 className="text-2xl font-bold text-white mb-6 relative">
                             Services
                             <div className="absolute bottom-0 left-0 w-12 h-1 bg-green-500 rounded-full"></div>
                         </h3>
@@ -106,7 +105,7 @@ export const TekarshFooter = () => {
 
                     {/* Company */}
                     <div className="lg:col-span-2">
-                        <h3 className="text-2xl font-bold text-white mb-8 relative">
+                        <h3 className="text-2xl font-bold text-white mb-6 relative">
                             Company
                             <div className="absolute bottom-0 left-0 w-12 h-1 bg-green-500 rounded-full"></div>
                         </h3>
@@ -132,7 +131,7 @@ export const TekarshFooter = () => {
 
                     {/* Newsletter */}
                     <div className="lg:col-span-2">
-                        <h3 className="text-2xl font-bold text-white mb-8 relative">
+                        <h3 className="text-2xl font-bold text-white mb-6 relative">
                             Newsletter
                             <div className="absolute bottom-0 left-0 w-12 h-1 bg-green-500 rounded-full"></div>
                         </h3>
@@ -153,7 +152,7 @@ export const TekarshFooter = () => {
                 </div>
 
                 {/* Bottom Section */}
-                <div className="border-t border-gray-700 pt-8">
+                <div className="border-t border-gray-700 pt-6">
                     <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
                         
                         {/* Social Links */}
@@ -161,7 +160,6 @@ export const TekarshFooter = () => {
                             {[
                                 { icon: Linkedin, href: 'https://www.linkedin.com/company/tekarsh/', label: 'LinkedIn' },
                                 { icon: Facebook, href: 'https://www.facebook.com/Tekarsh/', label: 'Facebook' },
-                                { icon: Twitter, href: 'https://twitter.com/tekarsh', label: 'Twitter' },
                             ].map((social, index) => (
                                 <button
                                     key={index}

@@ -269,28 +269,7 @@ export const Dataprocess = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-16 bg-gradient-to-br from-purple-900 via-purple-800 to-purple-700 relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M20 20c0-11.046-8.954-20-20-20v20h20z'/%3E%3C/g%3E%3C/svg%3E")`,
-          }} />
-        </div>
-        
-        <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-16 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-            Ready to streamline your data processing?
-          </h2>
-          <p className="text-lg md:text-xl text-purple-100 max-w-2xl mx-auto mb-8 leading-relaxed">
-            Let's discuss your data processing needs and create efficient back-office solutions.
-          </p>
 
-          <button className="bg-white text-purple-800 font-bold px-10 py-4 rounded-full hover:bg-purple-50 transition-all duration-300 transform hover:scale-105 shadow-lg">
-            Contact Us
-          </button>
-        </div>
-      </section>
 
       {/* Footer */}
       <TekarshFooter />

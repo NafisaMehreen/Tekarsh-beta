@@ -4,6 +4,7 @@ import { HeroSection } from './components/ui/hero-section.jsx';
 import { Particles } from './components/ui/particles.jsx';
 import { CategoryList } from './components/category-list.jsx';
 import { TekarshFooter } from './components/TekarshFooter.jsx';
+
 import { useNavigate } from 'react-router-dom';
 import { Zap, Shield, BarChart, Lightbulb, Settings, Code, Database, CheckCircle, Users, Utensils, GraduationCap, DollarSign } from 'lucide-react';
 
@@ -32,29 +33,29 @@ export const Landing = () => {
         {/* Hero Section */}
         <section aria-labelledby="hero-title" className="pt-[85px]">
           <HeroSection
-          badge="✨ Software Excellence"
-          title="From Vision to Reality"
-          subtitle="Transform your ideas into powerful, scalable solutions"
-          description="A fully integrated software development company delivering the highest quality custom software, elite QA, and partner-centric client services."
-          primaryAction="Let's Talk"
-          secondaryAction="See Our Work"
-          onPrimaryClick={() => scrollToSection('contact')}
-          onSecondaryClick={() => scrollToSection('services')}
-          features={[
-            {
-              icon: <Zap className="w-5 h-5 text-primary" />,
-              text: "High Performance"
-            },
-            {
-              icon: <Shield className="w-5 h-5 text-primary" />,
-              text: "Secure & Reliable"
-            },
-            {
-              icon: <BarChart className="w-5 h-5 text-primary" />,
-              text: "Scalable Solutions"
-            }
-          ]}
-        />
+            badge="✨ Software Excellence"
+            title="From Vision to Reality"
+            subtitle="Transform your ideas into powerful, scalable solutions"
+            description="A fully integrated software development company delivering the highest quality custom software, elite QA, and partner-centric client services."
+            primaryAction="Let's Talk"
+            secondaryAction="See Our Work"
+            onPrimaryClick={() => scrollToSection('services')}
+            onSecondaryClick={() => scrollToSection('services')}
+            features={[
+              {
+                icon: <Zap className="w-5 h-5 text-primary" />,
+                text: "High Performance"
+              },
+              {
+                icon: <Shield className="w-5 h-5 text-primary" />,
+                text: "Secure & Reliable"
+              },
+              {
+                icon: <BarChart className="w-5 h-5 text-primary" />,
+                text: "Scalable Solutions"
+              }
+            ]}
+          />
         </section>
       </main>
 
@@ -137,7 +138,7 @@ export const Landing = () => {
           </p>
           <button
             onClick={() => navigate('/about')}
-            className="bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800"
+            className="bg-green-700 text-white flex items-center justify-center hover:bg-green-800 transition-colors duration-200 text-lg font-medium w-32 h-12 rounded-lg"
           >
             About us
           </button>
@@ -306,28 +307,7 @@ export const Landing = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-16 bg-gradient-to-br from-green-900 via-green-800 to-green-700 relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M20 20c0-11.046-8.954-20-20-20v20h20z'/%3E%3C/g%3E%3C/svg%3E")`,
-          }} />
-        </div>
 
-        <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-16 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-            Ready to start your next project?
-          </h2>
-          <p className="text-lg md:text-xl text-green-100 max-w-2xl mx-auto mb-8 leading-relaxed">
-            Let's discuss your ideas and create something amazing together.
-          </p>
-
-          <button className="bg-white text-green-800 font-bold px-10 py-4 rounded-full hover:bg-green-50 transition-all duration-300 transform hover:scale-105 shadow-lg">
-            Contact Us
-          </button>
-        </div>
-      </section>
 
       {/* Footer */}
       <TekarshFooter />
