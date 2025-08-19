@@ -30,15 +30,15 @@ export const TekarshFooter = () => {
                 }} />
             </div>
 
-            <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-16 py-12">
+            <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-16 py-8">
                 {/* Main Footer Content */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-10">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-8">
                     
                     {/* Company Info - Takes more space */}
                     <div className="lg:col-span-5">
                         <div className="mb-6">
                             <img
-                                className="w-[350px] h-[105px] object-contain cursor-pointer mb-6"
+                                className="w-[300px] h-[90px] object-contain cursor-pointer mb-6"
                                 alt="Tekarsh Logo"
                                 src="/logo.png"
                                 onClick={() => navigate('/')}
@@ -114,7 +114,7 @@ export const TekarshFooter = () => {
                                 { name: 'About Us', href: '/about' },
                                 { name: 'Our Team', href: '/team' },
                                 { name: 'Careers', href: '/careers' },
-                                { name: 'Contact', href: '/contact' },
+                                { name: 'Contact', href: '/contacts' },
                             ].map((item, index) => (
                                 <li key={index}>
                                     <button
@@ -152,7 +152,7 @@ export const TekarshFooter = () => {
                 </div>
 
                 {/* Bottom Section */}
-                <div className="border-t border-gray-700 pt-6">
+                <div className="border-t border-gray-700 pt-4">
                     <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
                         
                         {/* Social Links */}
@@ -165,7 +165,7 @@ export const TekarshFooter = () => {
                                     key={index}
                                     onClick={() => handleNavigation(social.href)}
                                     aria-label={social.label}
-                                    className="bg-gray-800 p-4 rounded-full hover:bg-green-600 transition-all duration-300 hover:scale-110"
+                                    className="bg-gray-800 p-3 rounded-full hover:bg-green-600 transition-all duration-300 hover:scale-110"
                                 >
                                     <social.icon className="w-5 h-5" />
                                 </button>

@@ -288,6 +288,14 @@ button:focus-visible {
     backgroundPosition: 0% 50%;
     }
   }
+  @keyframes moveBackground {
+  from {
+    background-position: 0% 0%;
+    }
+  to {
+    background-position: 0% -1000%;
+    }
+  }
 }
 
 :root {

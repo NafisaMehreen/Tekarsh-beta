@@ -121,15 +121,15 @@ export const Navbar = ({ onMenuClick }) => {
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full h-[85px] z-50 bg-neutral-300 shadow-sm">
+    <header className="fixed top-0 left-0 w-full h-[85px] z-50 bg-neutral-100 shadow-md">
       <div className="max-w-[1600px] mx-auto relative flex items-center h-full px-4 sm:px-6 lg:px-8">
-        {/* Logo */}
-        <img
-          className="w-[150px] sm:w-[180px] lg:w-[200px] h-[60px] sm:h-[70px] lg:h-[85px] object-cover cursor-pointer"
-          alt="Tekarsh Logo"
-          src="logo.png"
-          onClick={() => navigate('/')}
-        />
+          {/* Logo */}
+          <img
+            className="w-[150px] sm:w-[180px] lg:w-[200px] h-[60px] sm:h-[70px] lg:h-[85px] object-cover cursor-pointer"
+            alt="Tekarsh Logo"
+            src="logo.png"
+            onClick={() => navigate('/')}
+          />
 
         {/* Desktop Navigation - Absolutely Centered */}
         <nav className="hidden lg:block absolute left-1/2 transform -translate-x-1/2">
@@ -190,18 +190,18 @@ export const Navbar = ({ onMenuClick }) => {
         </nav>
 
         {/* Mobile Menu Button */}
-        <button
-          className="lg:hidden ml-auto p-2 rounded-lg hover:bg-neutral-400 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
-          onClick={toggleMobileMenu}
-          aria-label="Toggle mobile menu"
-        >
-          {isMobileMenuOpen ? (
-            <X className="w-6 h-6 text-black" />
-          ) : (
-            <Menu className="w-6 h-6 text-black" />
-          )}
-        </button>
-      </div>
+          <button
+            className="lg:hidden ml-auto p-2 rounded-lg hover:bg-neutral-400 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+            onClick={toggleMobileMenu}
+            aria-label="Toggle mobile menu"
+          >
+            {isMobileMenuOpen ? (
+              <X className="w-6 h-6 text-black" />
+            ) : (
+              <Menu className="w-6 h-6 text-black" />
+            )}
+          </button>
+        </div>
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (

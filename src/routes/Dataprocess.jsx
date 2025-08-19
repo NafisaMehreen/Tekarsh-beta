@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navbar } from '../Navbar.jsx';
 import { TekarshFooter } from '../components/TekarshFooter.jsx';
+import { HeroSection } from '../components/ui/hero-section.jsx';
 import {
   FileText, Users, ChefHat, TrendingUp, HeadphonesIcon, Calculator,
   Database, CheckCircle, Clock, Target, Shield, Zap,
@@ -30,47 +31,26 @@ export const Dataprocess = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-6 md:px-16 bg-gradient-to-br from-purple-900 via-purple-800 to-purple-700 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/10"></div>
-        <div className="relative z-10 max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                Data Processing
-                <span className="block text-purple-300">Excellence</span>
-              </h1>
-              <p className="text-xl md:text-2xl mb-8 text-purple-100">
-                Streamlined invoice processing, effective lead generation, precise menu building, 
-                seamless recipe/onboarding support, and accurate QuickBooks entries.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-white text-purple-800 font-semibold px-8 py-4 rounded-lg hover:bg-purple-50 transition duration-300 flex items-center gap-2">
-                  Get Started
-                  <ArrowRight className="w-5 h-5" />
-                </button>
-                <button className="border-2 border-white text-white font-semibold px-8 py-4 rounded-lg hover:bg-white hover:text-purple-800 transition duration-300">
-                  View Services
-                </button>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-                <div className="grid grid-cols-2 gap-6">
-                  {stats.map((stat, index) => (
-                    <div key={index} className="text-center">
-                      <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
-                      <div className="text-purple-200 text-sm">{stat.label}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <section className="pt-[85px]">
+        <HeroSection
+          badge="📊 Data Processing"
+          title="Operate with precision"
+          subtitle="Reliable back‑office at scale"
+          description="Streamlined invoice processing, lead generation, menu building, onboarding support, and accurate QuickBooks entries."
+          primaryAction="Get started"
+          secondaryAction="View services"
+          onPrimaryClick={() => scrollToSection('services')}
+          onSecondaryClick={() => scrollToSection('services')}
+          features={[
+            { icon: <Database className="w-5 h-5 text-primary" />, text: 'Accurate & Fast' },
+            { icon: <CheckCircle className="w-5 h-5 text-primary" />, text: '99.9% Accuracy' },
+            { icon: <Zap className="w-5 h-5 text-primary" />, text: '24/7 Coverage' },
+          ]}
+        />
       </section>
 
       {/* Data Processing Services Section */}
-      <section className="py-20 px-6 md:px-16 bg-white">
+      <section id="services" className="py-20 px-6 md:px-16 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navbar } from '../Navbar.jsx';
 import { TekarshFooter } from '../components/TekarshFooter.jsx';
+import { HeroSection } from '../components/ui/hero-section.jsx';
 import {
   Shield, Bug, CheckCircle, Target, Zap, Users, 
   Monitor, 
@@ -29,47 +30,26 @@ export const Qa = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-6 md:px-16 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/10"></div>
-        <div className="relative z-10 max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                Quality
-                <span className="block text-blue-300">Assurance</span>
-                Excellence
-              </h1>
-              <p className="text-xl md:text-2xl mb-8 text-blue-100">
-                Ensure your software meets the highest standards with our comprehensive QA testing services and quality assurance solutions.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-white text-blue-800 font-semibold px-8 py-4 rounded-lg hover:bg-blue-50 transition duration-300 flex items-center gap-2">
-                  Start Testing
-                  <ArrowRight className="w-5 h-5" />
-                </button>
-                <button className="border-2 border-white text-white font-semibold px-8 py-4 rounded-lg hover:bg-white hover:text-blue-800 transition duration-300">
-                  View Test Cases
-                </button>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-                <div className="grid grid-cols-2 gap-6">
-                  {stats.map((stat, index) => (
-                    <div key={index} className="text-center">
-                      <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
-                      <div className="text-blue-200 text-sm">{stat.label}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <section className="pt-[85px]">
+        <HeroSection
+          badge="🔍 Quality Assurance"
+          title="Ship with confidence"
+          subtitle="QA that safeguards every release"
+          description="Ensure your software meets the highest standards with our comprehensive QA testing services and quality assurance solutions."
+          primaryAction="Start testing"
+          secondaryAction="See process"
+          onPrimaryClick={() => scrollToSection('services')}
+          onSecondaryClick={() => scrollToSection('services')}
+          features={[
+            { icon: <Shield className="w-5 h-5 text-primary" />, text: 'Security First' },
+            { icon: <CheckCircle className="w-5 h-5 text-primary" />, text: 'Zero Critical Bugs' },
+            { icon: <Zap className="w-5 h-5 text-primary" />, text: 'Automated + Manual' },
+          ]}
+        />
       </section>
 
       {/* QA Services Section */}
-      <section className="py-20 px-6 md:px-16 bg-white">
+      <section id="services" className="py-20 px-6 md:px-16 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
