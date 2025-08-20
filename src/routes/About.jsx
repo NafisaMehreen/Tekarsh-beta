@@ -268,18 +268,7 @@ export const About = () => {
           }} />
         </div>
         
-        <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-16 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-            Ready to partner with us?
-          </h2>
-          <p className="text-lg md:text-xl text-green-100 max-w-2xl mx-auto mb-8 leading-relaxed">
-            Let's discuss how TEKARSH can become an extension of your team and help you achieve your goals.
-          </p>
-
-          <button className="bg-white text-green-800 font-bold px-10 py-4 rounded-full hover:bg-green-50 transition-all duration-300 transform hover:scale-105 shadow-lg">
-            Contact Us
-          </button>
-        </div>
+        
       </section>
 
       {/* Footer */}
