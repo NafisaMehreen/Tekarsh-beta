@@ -64,8 +64,7 @@ export const CategoryList = ({
                   <div className="flex-1">
                     <h3
                       className={cn(
-                        "font-bold transition-colors duration-300",
-                        category.featured ? 'text-2xl md:text-3xl' : 'text-xl md:text-2xl',
+                        "font-bold transition-colors duration-300 text-2xl md:text-3xl",
                         hoveredItem === category.id ? 'text-primary' : 'text-foreground'
                       )}>
                       {category.title}
