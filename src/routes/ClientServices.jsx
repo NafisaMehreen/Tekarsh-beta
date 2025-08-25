@@ -7,8 +7,6 @@ import { ServiceCategoriesOverview } from '../components/ServiceCategoriesOvervi
 import { StrategicServicesDetailed } from '../components/StrategicServicesDetailed.jsx';
 import { EngagementModelsSection } from '../components/EngagementModelsSection.jsx';
 import { ClientJourneySection } from '../components/ClientJourneySection.jsx';
-import { FloatingNavigation } from '../components/FloatingNavigation.jsx';
-import { Breadcrumb } from '../components/Breadcrumb.jsx';
 import {
   Code, Database, Users, ArrowRight, CheckCircle,
   Target, Lightbulb, HeadphonesIcon, Settings,
@@ -38,69 +36,52 @@ export const ClientServices = () => {
 
   return (
     <div className="font-sans text-gray-900 scroll-smooth bg-neutral-100 min-h-screen">
-      {/* Skip to main content link for screen readers */}
-      <a 
-        href="#main-content" 
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-green-600 text-white px-4 py-2 rounded-md z-[60] focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
-      >
-        Skip to main content
-      </a>
-
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50" role="navigation" aria-label="Main navigation">
+      <div className="fixed top-0 w-full z-50">
         <Navbar onMenuClick={scrollToSection} />
-      </nav>
-
-      {/* Breadcrumb */}
-      <div className="pt-[85px]">
-        <Breadcrumb items={[{ label: 'Client Services' }]} />
       </div>
 
-      {/* Main Content */}
-      <main id="main-content" role="main">
-        {/* Hero Section */}
-        <section aria-labelledby="hero-title" className="mt-4 sm:mt-6">
-          <HeroSection
-            badge="✨ Client Services"
-            title="Comprehensive Services for Your Success"
-            subtitle="From engineering excellence to strategic partnerships"
-            description="We deliver end-to-end solutions that drive business growth through technology innovation and operational excellence."
-            primaryAction="Explore Our Services"
-            secondaryAction="Contact Us"
-            onPrimaryClick={() => scrollToSection('services')}
-            onSecondaryClick={() => scrollToSection('contact')}
-          />
-        </section>
+      {/* Hero Section */}
+      <section className="pt-[85px]">
+        <HeroSection
+          badge="✨ Client Services"
+          title="Comprehensive Services for Your Success"
+          subtitle="From engineering excellence to strategic partnerships"
+          description="We deliver end-to-end solutions that drive business growth through technology innovation and operational excellence."
+          primaryAction="Explore Our Services"
+          secondaryAction="Contact Us"
+          onPrimaryClick={() => scrollToSection('services')}
+          onSecondaryClick={() => scrollToSection('contact')}
+        />
+      </section>
 
-        {/* Service Categories Overview Section */}
+      {/* Service Categories Overview Section */}
+      <section id="services" className="py-20 px-6 md:px-16 bg-white">
         <ServiceCategoriesOverview 
           onStrategicClick={() => scrollToSection('strategic-services')}
         />
+      </section>
 
-        {/* Strategic Partnership Services Detailed Section */}
+      {/* Strategic Partnership Services Detailed Section */}
+      {/* <section id="strategic-services" className="py-20 px-6 md:px-16 bg-neutral-100">
         <StrategicServicesDetailed 
           onConsultationClick={handleScheduleConsultation}
           onCaseStudiesClick={() => navigate('/case-studies')}
         />
+      </section> */}
 
-        {/* Engagement Models Section */}
-        <section id="engagement-models" aria-labelledby="engagement-models-title">
-          <EngagementModelsSection onConsultationClick={handleScheduleConsultation} />
-        </section>
+      {/* Engagement Models Section */}
+      {/* <section id="engagement-models" className="py-20 px-6 md:px-16 bg-white">
+        <EngagementModelsSection onConsultationClick={handleScheduleConsultation} />
+      </section> */}
 
-        {/* Client Journey Section */}
-        <section id="client-journey" aria-labelledby="client-journey-title">
-          <ClientJourneySection />
-        </section>
-      </main>
-
-
+      {/* Client Journey Section */}
+      <section id="client-journey" className="py-20 px-6 md:px-16 bg-neutral-100">
+        <ClientJourneySection />
+      </section>
 
       {/* Footer */}
       <TekarshFooter />
-
-      {/* Floating Navigation */}
-      <FloatingNavigation onSectionClick={scrollToSection} />
     </div>
   );
 };
